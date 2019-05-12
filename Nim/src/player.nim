@@ -22,8 +22,10 @@ proc printGameboard(gameboard: Gameboard) =
 let gameboard = Gameboard(sideLen: BOARD_SIZE, offset: BREEDER_OFFSET)
 gameboard.onCreate()
     
-for i in 0..GENERATIONS:
-    gameboard.toNextGen
-    printGameboard(gameboard)
-
-echo "finished"
+when isMainModule:
+    
+    for i in 0..GENERATIONS:
+        gameboard.toNextGen
+        printGameboard(gameboard)
+        
+    echo "finished"
