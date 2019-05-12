@@ -1,6 +1,7 @@
 import gameboard as gb
 import cell as cl
 import utils
+import params
 import os
 
 proc printGameboard(gameboard: Gameboard) =
@@ -17,10 +18,11 @@ proc printGameboard(gameboard: Gameboard) =
     echo ""
     sleep(1000)
 
-let gameboard = Gameboard(sideLen: 30, offset: 12)
+# 実行処理
+let gameboard = Gameboard(sideLen: BOARD_SIZE, offset: BREEDER_OFFSET)
 gameboard.onCreate()
     
-for i in 0..30:
+for i in 0..GENERATIONS:
     gameboard.toNextGen
     printGameboard(gameboard)
 

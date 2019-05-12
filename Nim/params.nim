@@ -1,0 +1,3 @@
+const BOARD_SIZE* = 30
+const GENERATIONS* = 30
+const BREEDER_OFFSET* = 12
