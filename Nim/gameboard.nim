@@ -106,9 +106,8 @@ method createBreeder(gameboard: Gameboard, x: int, y:int, offset: int): CellStat
         
 
 method onCreate*(gameboard: Gameboard) {.base.} =
-    echo "Board Ready"
     # インスタンスのnew時に呼ぶこと
-    # TODO: ライフゲームの初期状態の設定 
+    # ライフゲームの初期状態の設定 
     let size = gameboard.sideLen
     if size == 0:
         return

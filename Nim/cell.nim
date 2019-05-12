@@ -51,7 +51,3 @@ method isOnTop*(cell: Cell) : bool {.base.} = cell.y == 0
 method isOnBottom*(cell: Cell, boardSize: int) : bool {.base.} = cell.y == boardSize - 1
 method isOnStart*(cell: Cell) : bool {.base.} = cell.x == 0
 method isOnEnd*(cell: Cell, boardSize: int): bool {.base.} = cell.x == boardSize - 1
-
-let cell = Cell(nextState: DEAD, currentState: ALIVE)
-cell.toNextGen()
-echo cell.getStateMark
