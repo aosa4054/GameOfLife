@@ -105,8 +105,7 @@ method createBreeder(gameboard: Gameboard, x: int, y:int, offset: int): CellStat
     return state
         
 
-method onCreate*(gameboard: Gameboard) {.base.} =
-    # インスタンスのnew時に呼ぶこと
+method onCreate(gameboard: Gameboard) {.base.} =
     # ライフゲームの初期状態の設定 
     let size = gameboard.sideLen
     if size == 0:
@@ -126,3 +125,8 @@ method onCreate*(gameboard: Gameboard) {.base.} =
                     )
             )
     )
+
+proc newGameboard*(sideLen: int, offset: int): Gameboard =
+    let gameboard = Gameboard(sideLen: sideLen, offset: offset)
+    gameboard.onCreate()
+    result = gameboard
