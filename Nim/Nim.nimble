@@ -12,3 +12,6 @@ bin           = @["player"]
 # Dependencies
 
 requires "nim >= 0.19.4"
+
+task run, "run project":
+    exec( "bin/./player" )
